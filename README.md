@@ -1,6 +1,6 @@
 # MLops-Project-Training
 
-This repository contains PyTorch training pipelines for aesthetic quality prediction using precomputed image embeddings, with MLflow tracking and a minimal CUDA-enabled Jupyter runtime.
+This repository contains PyTorch training pipelines for aesthetic quality prediction using precomputed image embeddings, with MLflow tracking and a minimal Jupyter container.
 
 ## Repository Summary
 
@@ -32,7 +32,7 @@ The current implementation trains multilayer perceptron models on cached embeddi
 
 ### Container runtime
 
-- [docker/Dockerfile.jupyter-torch-mlflow-cuda]: minimal Jupyter + PyTorch + CUDA image for running the training code.
+- [docker/Dockerfile.jupyter-torch-mlflow-cuda]: minimal Jupyter + PyTorch image for running the training code.
 - [docker/docker-compose-mlflow.yaml]: Docker Compose setup for the MLflow tracking server and backing Postgres database.
 
 ## Data Expectations
