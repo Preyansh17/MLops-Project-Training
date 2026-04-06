@@ -6,14 +6,14 @@ paths:
   run_name: global_run
 model:
   input_dim: 768
-  hidden_dims: [256, 64]
-  dropout: 0.1
+  hidden_dims: [1024, 256, 64]
+  dropout: 0.3
 training:
   batch_size: 2048
   epochs: 20
-  lr: 0.001
+  lr: 0.0003
   weight_decay: 0.0
   device: cpu
 mlflow:
   experiment_name: flickr_global
-  run_name: global-light-lr1e3-bs2048
+  run_name: global-large-lr3e4
