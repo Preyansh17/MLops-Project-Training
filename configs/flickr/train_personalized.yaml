@@ -6,7 +6,7 @@ paths:
   run_name: personalized_run
 model:
   input_dim: 768
-  user_emb_dim: 64
+  user_emb_dim: 16
   hidden_dims: [512, 128, 32]
   dropout: 0.1
 training:
@@ -17,4 +17,4 @@ training:
   device: cpu
 mlflow:
   experiment_name: flickr-personalized
-  run_name: personalized-userdim64-lr1e3
+  run_name: personalized-baseline-16
