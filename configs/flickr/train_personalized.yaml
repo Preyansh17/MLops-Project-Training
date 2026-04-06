@@ -17,4 +17,4 @@ training:
   device: cpu
 mlflow:
   experiment_name: flickr-personalized
-  run_name: personalized-light
+  run_name: personalized-large
