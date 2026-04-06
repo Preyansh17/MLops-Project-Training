@@ -6,15 +6,15 @@ paths:
   run_name: personalized_run
 model:
   input_dim: 768
-  user_emb_dim: 128
-  hidden_dims: [1024, 256, 64]
-  dropout: 0.3
+  user_emb_dim: 16
+  hidden_dims: [256, 64]
+  dropout: 0.1
 training:
   batch_size: 512
   epochs: 5
-  lr: 0.0003
+  lr: 0.001
   weight_decay: 0.0
   device: cpu
 mlflow:
   experiment_name: flickr-personalized
-  run_name: personalized-large
+  run_name: personalized-light
