@@ -65,7 +65,7 @@ The repository also includes [docker/docker-compose-mlflow.yaml], which is used 
 
 ## Running Training
 
-Run the scripts by passing the desired config file path:
+Run the scripts by passing the desired config file path. Please ensure that the embeddings directory and manifest file is properly configured.
 
 ```bash
 python src/flickr/train_flickr_global.py configs/flickr/train_global.yaml
