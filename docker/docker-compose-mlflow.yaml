@@ -1,0 +1,35 @@
+name: tracking_service
+services:
+  # Postgresql server provides storage for parameters, metrics from experiment runs
+  postgres:
+    image: postgres:18
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mlflowdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - /mnt/mlflow_persist/postgres_data:/var/lib/postgresql
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.9.0
+    container_name: mlflow
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      MLFLOW_TRACKING_URI: http://0.0.0.0:8000
+      MLFLOW_LOGGING_LEVEL: ERROR
+      MLFLOW_SERVER_ALLOWED_HOSTS: "*"
+      MLFLOW_S3_ENDPOINT_URL: https://chi.tacc.chameleoncloud.org:7480
+    ports:
+      - "8000:8000"
+    command: >
+      /bin/sh -c "pip install psycopg2-binary boto3 &&
+      mlflow server --backend-store-uri postgresql://user:password@postgres/mlflowdb 
+      --artifacts-destination s3://${BUCKET_NAME}/ --serve-artifacts --host 0.0.0.0 --port 8000"

@@ -1,0 +1,19 @@
+seed: 42
+paths:
+  manifest_csv: /workspace/flickr_aes_runs/splits/flickr_global_manifest.csv
+  output_root: /workspace/flickr_aes_runs
+  cache_subdir: clip_cache
+  run_name: global_run
+model:
+  input_dim: 768
+  hidden_dims: [512, 128, 32]
+  dropout: 0.1
+training:
+  batch_size: 2048
+  epochs: 20
+  lr: 0.001
+  weight_decay: 0.0
+  device: cpu
+mlflow:
+  experiment_name: flickr_global
+  run_name: global-lr1e3-bs2048

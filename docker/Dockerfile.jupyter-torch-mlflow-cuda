@@ -1,0 +1,16 @@
+FROM quay.io/jupyter/pytorch-notebook:cuda12-latest
+
+USER ${NB_UID}
+
+RUN pip install --no-cache-dir \
+    mlflow==3.9.0 \
+    pandas \
+    numpy \
+    pyyaml \
+    tqdm \
+    && fix-permissions "${CONDA_DIR}" \
+    && fix-permissions "/home/${NB_USER}"
+
+WORKDIR /home/${NB_USER}/work
+
+COPY --chown=${NB_UID}:${NB_GID} . /home/${NB_USER}/work

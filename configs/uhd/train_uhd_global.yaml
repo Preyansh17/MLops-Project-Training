@@ -1,0 +1,19 @@
+seed: 42
+paths:
+  manifest_csv: /workspace/uhd_iqa_runs/uhd_manifest.csv
+  output_root: /workspace/uhd_iqa_runs
+  cache_subdir: clip_cache
+  run_name: uhd_global
+training:
+  device: cpu
+  batch_size: 256
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+model:
+  input_dim: 768
+  hidden_dims: [512, 128, 32]
+  dropout: 0.2
+mlflow:
+  experiment_name: uhd_global
+  run_name: global-baseline
