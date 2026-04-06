@@ -67,7 +67,9 @@ The repository also includes [docker/docker-compose-mlflow.yaml], which is used 
 
 Run the scripts by passing the desired config file path. Please ensure that the embeddings directory and manifest file is properly configured.
 
-The images, manifest files and embeddings are available at these links: FLICKR-AES - https://drive.google.com/drive/folders/1Ht2qgplMZ4PH-bum35mKYhXHRPilN3HM?usp=sharing , UHD-IQA - https://drive.google.com/drive/folders/1LnW5EPsfbvZYK_5axfDK-2add8d6BPx6?usp=sharing .
+The images, manifest files and embeddings are available at these links: 
+FLICKR-AES - https://drive.google.com/drive/folders/1Ht2qgplMZ4PH-bum35mKYhXHRPilN3HM?usp=sharing
+UHD-IQA - https://drive.google.com/drive/folders/1LnW5EPsfbvZYK_5axfDK-2add8d6BPx6?usp=sharing
 
 ```bash
 python src/flickr/train_flickr_global.py configs/flickr/train_global.yaml
